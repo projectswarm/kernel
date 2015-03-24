@@ -16,6 +16,6 @@ void adc_disable (void);
 
 void adc_set_channel (uint8_t);
 
-void adc_start_conversion (void);
+void adc_convert (void);
 
 void adc_read (uint16_t*);

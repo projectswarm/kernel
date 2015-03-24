@@ -52,18 +52,18 @@ void adc_set_channel (uint8_t channel)
 	ADMUX |= channel;
 }
 
-void adc_start_conversion (void)
+void adc_convert (void)
 {
 	// Start single conversion
 	SETB(ADCSRA, ADSC);
+
+	// Wait untill conversion is completed
+	WAIT_UNTIL_BIT_IS_CLEAR(ADCSRA, ADSC);
 }
 
 void adc_read (uint16_t* value)
 {
-	adc_start_conversion();
-
-	// Wait utill conversion is completed
-	WAIT_UNTIL_BIT_IS_CLEAR(ADCSRA, ADSC);
+	adc_convert();
 
 	*value = ADCW;
 }
