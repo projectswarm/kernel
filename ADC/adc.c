@@ -58,7 +58,7 @@ void adc_convert (void)
 	// Start single conversion
 	SETB(ADCSRA, ADSC);
 
-	// Wait untill conversion is completed
+	// Wait until conversion is completed
 	WAIT_UNTIL_BIT_IS_CLEAR(ADCSRA, ADSC);
 }
 
