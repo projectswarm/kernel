@@ -5,9 +5,10 @@
  * @module Kernel/ADC
  */
 
+#include <stdint.h>
 #include <avr/io.h>
 
-#include "Core/macros.h"
+#include "../Core/macros.h"
 
 
 enum adc_reference { EXTERNAL_VREF = 0,
