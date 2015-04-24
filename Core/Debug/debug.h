@@ -8,6 +8,6 @@
 #ifndef CORE_DEBUG_DEBUG_H
 #define CORE_DEBUG_DEBUG_H
 
-void debug (char*);
+void debug (char*, ...);
 
 #endif

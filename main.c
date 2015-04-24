@@ -17,8 +17,7 @@ int main (void)
 	while (1)
 	{
 		// Run bitch, run!
-		usart_debug();
-		debug("ABCDEBUG");
+		debug("DEBUG: %s", "hello world!");
 		_delay_ms(1000);
 	}
 

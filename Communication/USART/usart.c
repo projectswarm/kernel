@@ -7,6 +7,7 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <stdint.h>
 #include <string.h>
 
 #include "../../Core/macros.h"
@@ -16,7 +17,7 @@
 
 
 // Circle buffer
-char incoming_buffer[COMMUNICATION_USART_BUFFER_SIZE] = {'a', 'b', 'C', 'd'};
+char incoming_buffer[COMMUNICATION_USART_BUFFER_SIZE];
 uint8_t incoming_buffer_pointer = 0;
 
 

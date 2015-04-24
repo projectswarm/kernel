@@ -17,10 +17,15 @@
 #include "../../Communication/USART/usart.h"
 
 
-void debug (char* message)
+void debug (char* format, ...)
 {
-	//char buffer[CORE_DEBUG_BUFFER_SIZE];
-	//sprintf_P(buffer, PSTR("DEBUG: %s"), message);
+	va_list ap;
+	va_start(ap, format);
 
-	usart_ssendbytes(message);
+	char buffer[CORE_DEBUG_BUFFER_SIZE];
+	vsprintf(buffer, format, ap);
+
+	va_end(ap);
+
+	usart_ssendbytes(buffer);
 }
