@@ -2,7 +2,7 @@
  * SWARM
  * System of Wide-Applicable Robotics Modules
  *
- * @module Kernel/ADC
+ * @module ADC
  */
 
 #ifndef ADC_ADC_H

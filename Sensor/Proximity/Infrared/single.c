@@ -8,8 +8,10 @@
 #include <stdint.h>
 
 #include "../../../Core/macros.h"
-#include "../../../ADC/adc.h"
 #include "config.h"
+#include "single.h"
+
+#include "../../../ADC/adc.h"
 
 
 uint8_t sensor_infrared_single_read (uint8_t sensor_id)

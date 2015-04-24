@@ -1,0 +1,16 @@
+/*
+ * SWARM
+ * System of Wide-Applicable Robotics Modules
+ *
+ * @module Communication/USART
+ */
+
+#ifndef COMMUNICATION_USART_CONFIG_H
+#define COMMUNICATION_USART_CONFIG_H
+
+#define COMMUNICATION_USART_BAUD_RATE 9600
+#define COMMUNICATION_USART_BAUD_PRESCALE (((F_CPU / (COMMUNICATION_USART_BAUD_RATE * 16UL))) - 1)
+
+#define COMMUNICATION_USART_BUFFER_SIZE 8
+
+#endif

@@ -8,6 +8,8 @@
 #ifndef SENSOR_PROXIMITY_INFRARED_SINGLE_H
 #define SENSOR_PROXIMITY_INFRARED_SINGLE_H
 
+#include <stdint.h>
+
 uint8_t sensor_infrared_single_read (uint8_t);
 
 #endif

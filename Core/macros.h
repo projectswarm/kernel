@@ -13,6 +13,7 @@
 #define CLRB(sfr, bit) ((sfr) &= ~(1 << (bit)))
 
 // Wait until bit in SFR is set
-#define WAIT_UNTIL_BIT_IS_CLEAR(sfr, bit) while (sfr & (1 << bit));
+#define WAIT_UNTIL_BIT_IS_SET(sfr, bit)   while ( ! (sfr & (1 << bit)))
+#define WAIT_UNTIL_BIT_IS_CLEAR(sfr, bit) while (sfr & (1 << bit))
 
 #endif

@@ -2,13 +2,15 @@
  * SWARM
  * System of Wide-Applicable Robotics Modules
  *
- * @module Kernel/ADC
+ * @module ADC
  */
 
 #include <stdint.h>
 #include <avr/io.h>
 
 #include "../Core/macros.h"
+#include "../Core/config.h"
+#include "adc.h"
 
 
 enum adc_reference { EXTERNAL_VREF = 0,
