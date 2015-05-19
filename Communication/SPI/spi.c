@@ -7,6 +7,7 @@
 
 #include <stdint.h>
 #include <avr/io.h>
+#include <avr/interrupt.h>
 
 #include "../../Core/macros.h"
 #include "../../Core/config.h"
@@ -38,17 +39,28 @@ void spi_init (enum spi_role role)
 
 		// Enable SPI
 		SETB(SPCR, SPE);
+
+		// Enable interrupts (for SLAVE only)
+		SETB(SPCR, SPIE);
 	}
 }
 
-unsigned char spi_transmit (unsigned char data)
+char spi_sendbyte (char outgoing_byte)
 {
 	// Data to send
-	SPDR = data;
+	SPDR = outgoing_byte;
 
-	// Send data
+	// Exchange data
+	// MASTER device waits until outgoing transmission is completed
+	// SLAVE device will wait for incoming transmission
 	WAIT_UNTIL_BIT_IS_SET(SPSR, SPIF);
 
 	// Read incoming data
 	return SPDR;
+}
+
+
+ISR (SPI_STC_vect)
+{
+	// Read incoming byte and send back appropriate sensor reading
 }

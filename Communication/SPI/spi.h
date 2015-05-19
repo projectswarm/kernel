@@ -13,6 +13,6 @@ enum spi_role;
 
 void spi_init (enum spi_role);
 
-unsigned char spi_transmit (unsigned char);
+char spi_sendbyte (char);
 
 #endif

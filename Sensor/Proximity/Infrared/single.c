@@ -21,7 +21,5 @@ uint8_t sensor_infrared_single_read (uint8_t sensor_id)
 	adc_set_channel(sensor_id);
 	adc_read(&reading);
 
-	return (reading >= SENSOR_PROXIMITY_INFRARED_CALIBRATION)
-			? 1
-			: 0;
+	return ((uint8_t) (reading >= SENSOR_PROXIMITY_INFRARED_THRESHOLD));
 }
