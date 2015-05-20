@@ -19,8 +19,8 @@
 		uint16_t error; //Current error
 		uint16_t windupband; //Integral opreating band
 		uint16_t istate; //Integral summing state
-		float *controlsignal; //Control signal of PID controller
+		float controlsignal; //Control signal of PID controller
 	};
 
-	 void pidcomputing(volatile struct infopid, uint16_t, uint16_t);
+	 void pidcomputing(volatile struct infopid*, uint16_t, uint16_t);
 #endif
