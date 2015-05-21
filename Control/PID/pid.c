@@ -11,7 +11,7 @@
 
 
 
-uint8_t pidcomputing(volatile struct pidparam *pid, uint16_t speed, uint16_t cur_speed){
+uint8_t pidcomputing(volatile struct pidparam *pid, int16_t speed, int16_t cur_speed){
 
 	//Calculating error signal between step value and current value
 	pid->error=speed-cur_speed;

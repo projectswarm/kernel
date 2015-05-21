@@ -21,5 +21,5 @@
 		uint16_t istate; //Integral summing state
 	};
 
-	 uint8_t pidcomputing(volatile struct pidparam* pid, uint16_t, uint16_t);
+	 uint8_t pidcomputing(volatile struct pidparam* pid, int16_t, int16_t);
 #endif
