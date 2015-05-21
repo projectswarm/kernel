@@ -5,20 +5,19 @@
  * @module Control/PID
  */
 
+#include <avr/io.h>
 #include <math.h>
 #include "pid.h"
 
 
 
-
-
-void pidcomputing(volatile struct pidparam *pid, uint16_t speed, uint16_t cur_speed){
+uint8_t pidcomputing(volatile struct pidparam *pid, uint16_t speed, uint16_t cur_speed){
 
 	//Calculating error signal between step value and current value
 	pid->error=speed-cur_speed;
 
 	//Summing error for calculating integral part of PID controller
-	if(abs(pid->error)>pid->windupband){
+	if(abs(pid->error)>(pid->windupband)){
 		pid->istate=pid->istate+pid->error;
 	}
 
@@ -40,10 +39,11 @@ void pidcomputing(volatile struct pidparam *pid, uint16_t speed, uint16_t cur_sp
 	//Calculating derivate gain
 	uint16_t Ud=((pid->Kp)*(pid->Td)*(pid->Ts))*(pid->error-pid->prev_error);
 
-	//Converting control signal to PWM signal
-	pid->controlsignal=(Up+Ui+Ud)/100*88.56;
-
 	//Error in previous sample time
 	pid->prev_error=pid->error;
+
+	uint8_t control_signal=(Up+Ui+Ud)/100*1.344;
+	//Converting control signal to PWM signal
+	return control_signal;
 }
 
