@@ -11,8 +11,6 @@
 #define COMMUNICATION_USART_BAUD_RATE 4800
 #define COMMUNICATION_USART_BAUD_PRESCALE (((F_CPU / (COMMUNICATION_USART_BAUD_RATE * 16UL))) - 1)
 
-#define COMMUNICATION_USART_BUFFER_SIZE 8
-
 #ifdef CPU_TYPE_ATMEGA324P
 	#define UCSRA         UCSR0A
 	#define UCSRB         UCSR0B
@@ -37,7 +35,6 @@
 	#define UBRRH         UBRR0H
 	#define UBRRL         UBRR0L
 	#define UDR           UDR0
-	#define USART_RX_vect USART_RX_vect
 
 	#define UDRE          UDRE0
 	#define RXEN          RXEN0

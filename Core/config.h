@@ -8,7 +8,7 @@
 #ifndef CORE_CONFIG_H
 #define CORE_CONFIG_H
 
-// Set or clear single bit in Special Function Register
+// Set CPU frequency
 #define F_CPU 1000000UL
 
 // Set CPU

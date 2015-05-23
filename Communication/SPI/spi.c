@@ -23,25 +23,24 @@ void spi_init (enum spi_role role)
 	if (role == MASTER)
 	{
 		// Set SCK and MOSI as output
-		SETB(DDRB, COMMUNICATION_SPI_SCK);
-		SETB(DDRB, COMMUNICATION_SPI_MOSI);
+		DDRB |= _BV(COMMUNICATION_SPI_SCK) | _BV(COMMUNICATION_SPI_MOSI);
 
 		// Enable SPI
-		SETB(SPCR, SPE);
+		SPCR |= _BV(SPE);
 
 		// Set as MASTER
-		SETB(SPCR, MSTR);
+		SPCR |= _BV(MSTR);
 	}
 	else
 	{
 		// Set MISO as output
-		SETB(DDRB, COMMUNICATION_SPI_MISO);
+		DDRB |= _BV(COMMUNICATION_SPI_MISO);
 
 		// Enable SPI
-		SETB(SPCR, SPE);
+		SPCR |= _BV(SPE);
 
 		// Enable interrupts (for SLAVE only)
-		SETB(SPCR, SPIE);
+		SPCR |= _BV(SPIE);
 	}
 }
 

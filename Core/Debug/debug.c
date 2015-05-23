@@ -27,5 +27,5 @@ void debug (char* format, ...)
 
 	va_end(ap);
 
-	usart_ssendbytes(buffer);
+	usart_sendbytes(buffer);
 }

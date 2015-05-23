@@ -10,8 +10,7 @@
 
 void usart_init (void);
 void usart_sendbyte (char);
-void usart_sendbytes (char[], uint8_t);
-void usart_ssendbytes (char*);
-void usart_debug (void);
+void usart_sendbytes_c (char[], uint8_t);
+void usart_sendbytes (char*);
 
 #endif

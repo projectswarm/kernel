@@ -8,13 +8,14 @@
 #ifndef SENSOR_PROXIMITY_INFRARED_MATRIX_H
 #define SENSOR_PROXIMITY_INFRARED_MATRIX_H
 
-struct Matrix {
-	uint8_t ne;
-	uint8_t e;
-	uint8_t se;
-	uint8_t sw;
-	uint8_t w;
-	uint8_t nw;
+struct Matrix
+{
+	uint16_t ne;
+	uint16_t e;
+	uint16_t se;
+	uint16_t sw;
+	uint16_t w;
+	uint16_t nw;
 };
 
 
